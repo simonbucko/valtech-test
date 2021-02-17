@@ -12,7 +12,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 
 //redux
 import { useDispatch } from "react-redux";
-import { changeItemsPerPage } from "../../redux/actions/data";
+import { changeItemsPerPage, changeFilters } from "../../redux/actions/data";
 import { useSelector } from "react-redux";
 
 const marks = [
@@ -39,9 +39,7 @@ const Aside = () => {
   };
 
   const handleCheckboxChange = (event) => {
-    // setState({ ...state, [event.target.name]: event.target.checked });
-    console.log(event.target.name);
-    console.log(event.target.checked);
+    dispatch(changeFilters(event));
   };
 
   return (
@@ -58,6 +56,7 @@ const Aside = () => {
                     checked={manufacturer.isSelected}
                     onChange={handleCheckboxChange}
                     name={manufacturer.name}
+                    color="primary"
                   />
                 }
                 label={manufacturer.name}

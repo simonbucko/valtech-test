@@ -1,4 +1,4 @@
-import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE } from "../constants/actionTypes";
+import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE, CHANGE_FILTERS } from "../constants/actionTypes";
 import { fetchProductsData } from '../../api/api';
 
 export const fetchData = () => async (dispatch) => {
@@ -16,4 +16,8 @@ export const movePage = (page) => dispatch => {
 
 export const changeItemsPerPage = (value) => dispatch => {
     dispatch({ type: ITEMS_PER_PAGE, payload: value })
+}
+
+export const changeFilters = (event) => dispatch => {
+    dispatch({ type: CHANGE_FILTERS, payload: event })
 }

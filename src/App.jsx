@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Main from "./components/Main/Main";
 import Aside from "./components/Aside/Aside";
 import Navbar from "./components/Navbar/Navbar";
-
+import "./styles/App.css";
 //redux
 
 import { useDispatch } from "react-redux";
@@ -20,13 +20,15 @@ const App = () => {
   }, []);
 
   return (
-    <Container maxWidth="lg">
+    <>
       <Navbar />
-      <Grid container spacing={4}>
-        <Aside />
-        <Main />
-      </Grid>
-    </Container>
+      <Container maxWidth="lg">
+        <Grid container spacing={4}>
+          <Aside />
+          <Main />
+        </Grid>
+      </Container>
+    </>
   );
 };
 

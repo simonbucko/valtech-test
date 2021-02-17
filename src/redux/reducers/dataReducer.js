@@ -1,11 +1,25 @@
+import { FETCH_DATA, MOVE_PAGE } from "../constants/actionTypes";
 
 const initialState = {
+    articles: [],
+    filteredArticles: [],
+    itemsPerPage: 12,
+    page: 1,
+    pages: 0,
+    headline: "",
+    manufacturer: null,
+    manufacturers: [],
+    smuuid: null
 }
 
 const dataReducer = (state = initialState, action) => {
     switch (action.type) {
-        default:
+        case FETCH_DATA:
+            return { ...state, ...action.payload, filteredArticles: action.payload.articles, pages: Math.floor(action.payload.articles.length / state.itemsPerPage) }
 
+        case MOVE_PAGE:
+            return { ...state, page: action.payload }
+        default:
             return state;
     }
 

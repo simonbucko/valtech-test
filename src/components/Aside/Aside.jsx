@@ -56,6 +56,7 @@ const Aside = () => {
                     checked={manufacturer.isSelected}
                     onChange={handleCheckboxChange}
                     name={manufacturer.name}
+                    color="primary"
                   />
                 }
                 label={manufacturer.name}

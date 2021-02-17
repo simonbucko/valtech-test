@@ -19,6 +19,7 @@ const CustomPagination = () => {
         count={pagesCount}
         size="large"
         page={page}
+        color="primary"
         onChange={handleChange}
       />
     </div>

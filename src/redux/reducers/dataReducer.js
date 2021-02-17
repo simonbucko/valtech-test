@@ -1,4 +1,4 @@
-import { FETCH_DATA, MOVE_PAGE } from "../constants/actionTypes";
+import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE } from "../constants/actionTypes";
 
 const initialState = {
     articles: [],
@@ -19,6 +19,9 @@ const dataReducer = (state = initialState, action) => {
 
         case MOVE_PAGE:
             return { ...state, page: action.payload }
+
+        case ITEMS_PER_PAGE:
+            return { ...state, itemsPerPage: action.payload, pages: Math.floor(state.filteredArticles.length / action.payload) }
         default:
             return state;
     }

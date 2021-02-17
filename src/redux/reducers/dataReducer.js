@@ -21,7 +21,7 @@ const dataReducer = (state = initialState, action) => {
             return { ...state, page: action.payload }
 
         case ITEMS_PER_PAGE:
-            return { ...state, itemsPerPage: action.payload, pages: Math.floor(state.filteredArticles.length / action.payload) }
+            return { ...state, page: 1, itemsPerPage: action.payload, pages: Math.floor(state.filteredArticles.length / action.payload) }
         default:
             return state;
     }

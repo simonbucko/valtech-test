@@ -14,9 +14,18 @@ const Products = () => {
   return (
     <Grid container spacing={4}>
       {products.length ? (
-        products
-          .slice(page * itemsPerPage, page * itemsPerPage + itemsPerPage)
-          .map((product) => <Product key={product.id} product={product} />)
+        products.length > 12 ? (
+          products
+            .slice(
+              (page - 1) * itemsPerPage,
+              (page - 1) * itemsPerPage + itemsPerPage
+            )
+            .map((product) => <Product key={product.id} product={product} />)
+        ) : (
+          products.map((product) => (
+            <Product key={product.id} product={product} />
+          ))
+        )
       ) : (
         <CircularProgress />
       )}

@@ -1,4 +1,4 @@
-import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE } from "../constants/actionTypes";
+import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE, CHANGE_FILTERS } from "../constants/actionTypes";
 
 const initialState = {
     articles: [],
@@ -22,6 +22,9 @@ const dataReducer = (state = initialState, action) => {
 
         case ITEMS_PER_PAGE:
             return { ...state, page: 1, itemsPerPage: action.payload, pages: Math.floor(state.filteredArticles.length / action.payload) }
+
+        case CHANGE_FILTERS:
+            return { ...state, manufacturers: state.manufacturers.map(manu => manu.name === action.payload.target.name ? { ...manu, isSelected: action.payload.target.checked } : manu) }
         default:
             return state;
     }

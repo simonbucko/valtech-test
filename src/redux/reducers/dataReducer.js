@@ -47,6 +47,9 @@ const dataReducer = (state = initialState, action) => {
             const newCart = [...state.cart];
             newCart.push(action.payload)
             return { ...state, cart: newCart }
+
+        case REMOVE_FROM_CART:
+            return { ...state, cart: state.cart.filter(item => item.id !== action.payload) }
         default:
             return state;
     }

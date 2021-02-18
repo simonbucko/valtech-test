@@ -1,4 +1,4 @@
-import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE, CHANGE_FILTERS } from "../constants/actionTypes";
+import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE, CHANGE_FILTERS, ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
 import { fetchProductsData } from '../../api/api';
 
 export const fetchData = () => async (dispatch) => {
@@ -20,4 +20,12 @@ export const changeItemsPerPage = (value) => dispatch => {
 
 export const changeFilters = (event) => dispatch => {
     dispatch({ type: CHANGE_FILTERS, payload: event })
+}
+
+export const addToCart = (product) => dispatch => {
+    dispatch({ type: ADD_TO_CART, payload: product })
+}
+
+export const removeFromCart = (id) => dispatch => {
+    dispatch({ type: REMOVE_FROM_CART, payload: id })
 }

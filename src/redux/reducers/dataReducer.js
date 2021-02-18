@@ -1,4 +1,4 @@
-import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE, CHANGE_FILTERS } from "../constants/actionTypes";
+import { FETCH_DATA, MOVE_PAGE, ITEMS_PER_PAGE, CHANGE_FILTERS, ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
 
 const initialState = {
     articles: [],
@@ -9,7 +9,8 @@ const initialState = {
     headline: "",
     manufacturer: null,
     manufacturers: [],
-    smuuid: null
+    smuuid: null,
+    cart: []
 }
 
 const dataReducer = (state = initialState, action) => {
@@ -41,6 +42,14 @@ const dataReducer = (state = initialState, action) => {
             )
 
             return { ...state, manufacturers, filteredArticles, page: 1, pages: Math.ceil(filteredArticles.length / state.itemsPerPage) }
+
+        case ADD_TO_CART:
+            const newCart = [...state.cart];
+            newCart.push(action.payload)
+            return { ...state, cart: newCart }
+
+        case REMOVE_FROM_CART:
+            return { ...state, cart: state.cart.filter(item => item.id !== action.payload) }
         default:
             return state;
     }

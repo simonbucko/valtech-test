@@ -1,7 +1,7 @@
 import React from "react";
-import Products from "../Products/Products";
+import Products from "./Products/Products";
 import FilterChips from "./FilterChips/FilterChips";
-import CustomPagination from "../CustomPagination/CustomPagination";
+import CustomPagination from "./CustomPagination/CustomPagination";
 
 //mui
 import Grid from "@material-ui/core/Grid";

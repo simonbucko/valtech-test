@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+//mui
 import Pagination from "@material-ui/lab/Pagination";
 
 //redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { movePage } from "../../redux/actions/data";
+import { movePage } from "../../../redux/actions/data";
 
 const CustomPagination = () => {
   const dispatch = useDispatch();

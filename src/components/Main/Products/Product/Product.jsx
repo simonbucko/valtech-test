@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 
 //redux
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../../redux/actions/data";
+import { addToCart } from "../../../../redux/actions/data";
 import { useSelector } from "react-redux";
 
 const Product = ({ product }) => {

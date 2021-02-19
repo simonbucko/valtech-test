@@ -23,7 +23,10 @@ const CartItem = ({ item }) => {
   return (
     <ListItem>
       <ListItemAvatar>
-        <Avatar variant="square">
+        <Avatar
+          variant="square"
+          src={`https://github.com/simonbucko/valtech-test/blob/main/src/assets/images/${item.image.file}?raw=true`}
+        >
           <FolderIcon />
         </Avatar>
       </ListItemAvatar>

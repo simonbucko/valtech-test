@@ -11,6 +11,7 @@ import { fetchData } from "./redux/actions/data";
 //mui
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
+import Divider from "@material-ui/core/Divider";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -23,8 +24,9 @@ const App = () => {
     <>
       <Navbar />
       <Container maxWidth="xl">
-        <Grid container spacing={4}>
+        <Grid container spacing={6}>
           <Aside />
+          <Divider orientation="vertical" flexItem />
           <Main />
         </Grid>
       </Container>

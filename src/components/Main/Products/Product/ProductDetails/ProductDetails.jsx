@@ -50,7 +50,9 @@ const ProductDetails = ({ open, handleClose, product }) => {
               />
             </div>
             <div>
-              <Typography variant="h5">Desription:</Typography>
+              <Typography variant="h5" style={{ marginTop: "8px" }}>
+                Desription:
+              </Typography>
               <Typography
                 variant="body1"
                 style={{ padding: "10px 5px 10px 0" }}

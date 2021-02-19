@@ -47,39 +47,46 @@ const Aside = () => {
       <Typography variant="h5">Filters</Typography>
       <FormControl component="fieldset">
         <FormGroup>
-          {manufacturers ? (
-            manufacturers.map((manufacturer) => (
-              <FormControlLabel
-                key={manufacturer.name}
-                control={
-                  <Checkbox
-                    checked={manufacturer.isSelected}
-                    onChange={handleCheckboxChange}
-                    name={manufacturer.name}
-                    color="primary"
+          <Grid container>
+            {manufacturers ? (
+              manufacturers.map((manufacturer) => (
+                <Grid item xs={6} sm={4} md={12} key={manufacturer.name}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={manufacturer.isSelected}
+                        onChange={handleCheckboxChange}
+                        name={manufacturer.name}
+                        color="primary"
+                      />
+                    }
+                    label={manufacturer.name}
                   />
-                }
-                label={manufacturer.name}
-              />
-            ))
-          ) : (
-            <CircularProgress />
-          )}
+                </Grid>
+              ))
+            ) : (
+              <CircularProgress />
+            )}
+          </Grid>
         </FormGroup>
       </FormControl>
       <Typography variant="h5" id="discrete-slider-custom" gutterBottom>
         Items per page
       </Typography>
-      <Slider
-        defaultValue={12}
-        aria-labelledby="discrete-slider-custom"
-        step={12}
-        valueLabelDisplay="auto"
-        marks={marks}
-        min={12}
-        max={36}
-        onChange={handleSliderChange}
-      />
+      <Grid container>
+        <Grid item xs={6} md={12}>
+          <Slider
+            defaultValue={12}
+            aria-labelledby="discrete-slider-custom"
+            step={12}
+            valueLabelDisplay="auto"
+            marks={marks}
+            min={12}
+            max={36}
+            onChange={handleSliderChange}
+          />
+        </Grid>
+      </Grid>
     </Grid>
   );
 };

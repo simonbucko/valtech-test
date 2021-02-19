@@ -22,7 +22,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid container spacing={4}>
           <Aside />
           <Main />

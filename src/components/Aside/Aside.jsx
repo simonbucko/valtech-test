@@ -74,7 +74,7 @@ const Aside = () => {
         Items per page
       </Typography>
       <Grid container>
-        <Grid item xs={6} md={12}>
+        <Grid item xs={12} sm={6} md={12}>
           <Slider
             defaultValue={12}
             aria-labelledby="discrete-slider-custom"

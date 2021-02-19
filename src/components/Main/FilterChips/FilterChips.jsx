@@ -31,6 +31,7 @@ const FilterChips = () => {
             onClick={(e) => handleRemoveFilter(e, manu.name)}
             onDelete={(e) => handleRemoveFilter(e, manu.name)}
             color="primary"
+            style={{ margin: "5px 8px" }}
           />
         ))
       ) : (

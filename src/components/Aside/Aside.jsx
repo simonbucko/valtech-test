@@ -43,7 +43,7 @@ const Aside = () => {
   };
 
   return (
-    <Grid item md={2}>
+    <Grid item xs={12} md={3}>
       <Typography variant="h5">Filters</Typography>
       <FormControl component="fieldset">
         <FormGroup>

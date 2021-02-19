@@ -23,10 +23,14 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" style={{ marginTop: "60px" }}>
         <Grid container spacing={6}>
           <Aside />
-          <Divider orientation="vertical" flexItem />
+          <Divider
+            orientation="vertical"
+            flexItem
+            styles={{ display: "none" }}
+          />
           <Main />
         </Grid>
       </Container>

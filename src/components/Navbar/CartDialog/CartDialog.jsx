@@ -3,7 +3,6 @@ import CartItem from "./CartItem/CartItem";
 
 //redux
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 //mui
 import Slide from "@material-ui/core/Slide";
 import Dialog from "@material-ui/core/Dialog";
@@ -25,6 +24,7 @@ const CartDialog = ({ open, handleClose }) => {
       onClose={handleClose}
       fullWidth
       maxWidth="sm"
+      scroll="body"
     >
       <DialogTitle>Your CART</DialogTitle>
       <DialogContent>

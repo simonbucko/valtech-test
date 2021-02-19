@@ -10,7 +10,7 @@ import useStyles from "./style";
 const Main = () => {
   const classes = useStyles();
   return (
-    <Grid item md={9} className={classes.grid}>
+    <Grid item sm={12} md={8} className={classes.grid}>
       <FilterChips />
       <Products />
       <CustomPagination />

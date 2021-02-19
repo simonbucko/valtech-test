@@ -21,6 +21,7 @@ const CustomPagination = () => {
         page={page}
         color="primary"
         onChange={handleChange}
+        siblingCount={0}
       />
     </div>
   );

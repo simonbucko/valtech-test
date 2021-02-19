@@ -1,7 +1,6 @@
 import React from "react";
 //mui
 import Pagination from "@material-ui/lab/Pagination";
-
 //redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -15,7 +14,7 @@ const CustomPagination = () => {
     dispatch(movePage(value));
   };
   return (
-    <div>
+    <div className="pagination-wrapper">
       <Pagination
         count={pagesCount}
         size="large"

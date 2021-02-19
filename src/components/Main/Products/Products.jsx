@@ -12,7 +12,7 @@ const Products = () => {
   const itemsPerPage = useSelector((state) => state.data.itemsPerPage);
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} alignItems="stretch">
       {products.length ? (
         products.length > 12 ? (
           products

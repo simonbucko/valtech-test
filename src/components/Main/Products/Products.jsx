@@ -4,7 +4,7 @@ import Product from "./Product/Product";
 import { useSelector } from "react-redux";
 //mui
 import Grid from "@material-ui/core/Grid";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { Typography } from "@material-ui/core";
 
 const Products = () => {
   const products = useSelector((state) => state.data.filteredArticles);
@@ -27,7 +27,10 @@ const Products = () => {
           ))
         )
       ) : (
-        <CircularProgress />
+        <Typography variant="h6">
+          {" "}
+          No products found. Please try other brand.{" "}
+        </Typography>
       )}
     </Grid>
   );
